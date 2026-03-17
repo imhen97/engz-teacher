@@ -31,7 +31,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
           >
             <div className="space-y-2">
               <p className="text-xs uppercase tracking-[0.25em] text-coral">
-                Lesson {lesson.position.toString().padStart(2, "0")}
+                레슨 {lesson.position.toString().padStart(2, "0")}
               </p>
               <h2 className="text-xl font-semibold">{lesson.title}</h2>
               <p className="max-w-2xl text-sm leading-7 text-slate-600">{lesson.summary}</p>
@@ -39,7 +39,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <div className="flex gap-3 text-sm text-slate-500">
               <span className="inline-flex items-center gap-2 rounded-full bg-sand px-4 py-2">
                 <PlayCircle className="h-4 w-4 text-teal" />
-                Video
+                영상
               </span>
               {lesson.pdf_url ? (
                 <span className="inline-flex items-center gap-2 rounded-full bg-sand px-4 py-2">

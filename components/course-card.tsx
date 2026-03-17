@@ -16,10 +16,10 @@ export function CourseCard({
       <p className="mt-3 flex-1 text-sm leading-7 text-slate-600">{course.description}</p>
       <div className="mt-5 flex items-center justify-between">
         <span className="rounded-full bg-sand px-4 py-2 text-sm text-slate-700">
-          {lessonCount} lessons
+          레슨 {lessonCount}개
         </span>
         <Link href={`/courses/${course.slug}`} className="inline-flex items-center text-sm font-semibold">
-          Open course
+          강의 보기
           <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </div>

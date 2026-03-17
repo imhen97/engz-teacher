@@ -5,12 +5,18 @@ import { signOut } from "@/lib/actions";
 import type { CurrentUserProfile } from "@/lib/types";
 
 const links = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/courses", label: "Courses" },
-  { href: "/resources", label: "Resources" },
-  { href: "/announcements", label: "Announcements" },
-  { href: "/admin", label: "Admin" }
+  { href: "/dashboard", label: "대시보드" },
+  { href: "/courses", label: "강의" },
+  { href: "/resources", label: "자료실" },
+  { href: "/announcements", label: "공지사항" },
+  { href: "/admin", label: "관리자" }
 ];
+
+const roleLabel: Record<string, string> = {
+  student: "학생",
+  teacher: "선생님",
+  admin: "관리자"
+};
 
 export function PortalShell({
   children,
@@ -26,9 +32,9 @@ export function PortalShell({
           <div>
             <Link href="/" className="block rounded-[28px] bg-ink px-5 py-6 text-white">
               <p className="text-xs uppercase tracking-[0.35em] text-sand/80">Northstar English</p>
-              <h1 className="mt-4 text-2xl font-semibold">Learning Portal</h1>
+              <h1 className="mt-4 text-2xl font-semibold">영어회화 학습 포털</h1>
               <p className="mt-2 text-sm leading-6 text-slate-300">
-                Courses, lessons, resources, and class updates.
+                강의, 레슨, 자료실, 공지사항을 한 번에 확인하세요.
               </p>
             </Link>
             <nav className="mt-6 grid gap-2">
@@ -39,13 +45,13 @@ export function PortalShell({
           </div>
 
           <div className="rounded-[28px] border border-slate-200 bg-white p-4">
-            <p className="text-xs uppercase tracking-[0.25em] text-teal">{profile.role}</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-teal">{roleLabel[profile.role] ?? profile.role}</p>
             <p className="mt-3 text-lg font-semibold">{profile.fullName}</p>
             <p className="mt-1 text-sm text-slate-500">{profile.email}</p>
             <form action={signOut} className="mt-4">
               <button className="button-secondary w-full">
                 <LogOut className="mr-2 h-4 w-4" />
-                Sign out
+                로그아웃
               </button>
             </form>
           </div>

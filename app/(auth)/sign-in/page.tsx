@@ -15,19 +15,18 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
           <p className="text-xs uppercase tracking-[0.35em] text-teal">Northstar English</p>
           <div className="space-y-4">
             <h1 className="max-w-xl text-4xl font-semibold leading-tight lg:text-6xl">
-              A focused portal for English teaching and self-study.
+              한국인 학습자를 위한 영어회화 전용 포털
             </h1>
             <p className="max-w-lg text-base leading-7 text-slate-600">
-              Sign in to open your dashboard, watch lesson videos, download course PDFs, and
-              follow teacher announcements.
+              로그인하면 대시보드, 강의 영상, PDF 자료, 선생님 공지사항을 한 번에 확인할 수 있습니다.
             </p>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            "Structured courses by level",
-            "Lesson video and PDF delivery",
-            "Teacher-managed resources and announcements"
+            "레벨별로 정리된 코스 구성",
+            "영상 레슨과 PDF 학습자료 제공",
+            "선생님 공지와 자료실을 한 곳에서 확인"
           ].map((text) => (
             <div key={text} className="rounded-[24px] border border-white/70 bg-white/70 p-4">
               <p className="text-sm leading-6 text-slate-700">{text}</p>
@@ -43,36 +42,36 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
           </div>
         ) : null}
         <div className="panel p-6">
-          <h2 className="text-2xl font-semibold">Sign in</h2>
+          <h2 className="text-2xl font-semibold">로그인</h2>
           <form action={signIn} className="mt-5 space-y-4">
-            <input name="email" type="email" className="field" placeholder="Email address" required />
+            <input name="email" type="email" className="field" placeholder="이메일 주소" required />
             <input
               name="password"
               type="password"
               className="field"
-              placeholder="Password"
+              placeholder="비밀번호"
               required
             />
-            <button className="button-primary w-full">Enter Portal</button>
+            <button className="button-primary w-full">포털 들어가기</button>
           </form>
         </div>
         <div className="panel p-6">
-          <h2 className="text-2xl font-semibold">Create student account</h2>
+          <h2 className="text-2xl font-semibold">학생 계정 만들기</h2>
           <form action={signUp} className="mt-5 space-y-4">
-            <input name="fullName" className="field" placeholder="Full name" required />
-            <input name="email" type="email" className="field" placeholder="Email address" required />
+            <input name="fullName" className="field" placeholder="이름" required />
+            <input name="email" type="email" className="field" placeholder="이메일 주소" required />
             <input
               name="password"
               type="password"
               className="field"
-              placeholder="Create password"
+              placeholder="비밀번호 만들기"
               required
             />
-            <button className="button-secondary w-full">Register</button>
+            <button className="button-secondary w-full">회원가입</button>
           </form>
         </div>
         <Link href="/" className="text-sm text-slate-600 underline-offset-4 hover:underline">
-          Return to home
+          홈으로 돌아가기
         </Link>
       </section>
     </main>

@@ -27,7 +27,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
         <div className="panel p-4">
           <div className="mb-4 flex items-center gap-2 text-sm text-slate-500">
             <Video className="h-4 w-4 text-teal" />
-            Lesson video
+            레슨 영상
           </div>
           {lesson.video_url ? (
             <div className="aspect-video overflow-hidden rounded-[24px] border border-slate-200 bg-slate-950">
@@ -41,16 +41,16 @@ export default async function LessonPage({ params }: LessonPageProps) {
             </div>
           ) : (
             <div className="rounded-[24px] border border-dashed border-slate-300 bg-slate-50 p-10 text-sm text-slate-500">
-              No video URL has been attached to this lesson yet.
+              아직 이 레슨에는 영상 링크가 등록되지 않았습니다.
             </div>
           )}
         </div>
 
         <aside className="space-y-4">
           <div className="panel p-6">
-            <h2 className="text-xl font-semibold">Materials</h2>
+            <h2 className="text-xl font-semibold">학습 자료</h2>
             <p className="mt-2 text-sm leading-7 text-slate-600">
-              Download the lesson worksheet or open the course to move through the full sequence.
+              레슨 PDF를 내려받거나 강의 페이지로 돌아가 전체 순서대로 학습할 수 있습니다.
             </p>
             <div className="mt-5 flex flex-col gap-3">
               {lesson.pdf_url ? (
@@ -61,12 +61,12 @@ export default async function LessonPage({ params }: LessonPageProps) {
                   className="button-primary w-full"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Download PDF
+                  PDF 다운로드
                 </a>
               ) : null}
               <Link href={`/courses/${lesson.courseSlug}`} className="button-secondary w-full">
                 <FileText className="mr-2 h-4 w-4" />
-                Back to course
+                강의로 돌아가기
               </Link>
             </div>
           </div>

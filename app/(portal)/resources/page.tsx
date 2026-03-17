@@ -8,9 +8,9 @@ export default async function ResourcesPage() {
   return (
     <div className="space-y-6">
       <SectionHeading
-        eyebrow="Library"
-        title="Resource library"
-        description="Worksheets, vocabulary packs, speaking prompts, and other downloadable support files."
+        eyebrow="자료실"
+        title="학습 자료실"
+        description="워크시트, 단어장, 스피킹 프롬프트, 복습 자료를 한 곳에서 내려받을 수 있습니다."
       />
       <div className="grid gap-4 md:grid-cols-2">
         {snapshot.resources.map((resource) => (
@@ -29,7 +29,7 @@ export default async function ResourcesPage() {
               className="button-secondary mt-5"
             >
               <Download className="mr-2 h-4 w-4" />
-              Download file
+              파일 다운로드
             </a>
           </article>
         ))}
