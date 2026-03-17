@@ -20,8 +20,8 @@ export function NavLink({
       className={cn(
         "rounded-full px-4 py-3 text-sm font-medium transition",
         active
-          ? "bg-gradient-to-r from-rose-400 to-pink-300 text-white shadow-md"
-          : "text-slate-600 hover:bg-white/80 hover:text-slate-950"
+          ? "bg-black text-white shadow-[0_10px_25px_rgba(22,22,22,0.14)]"
+          : "text-slate-600 hover:bg-white hover:text-slate-950"
       )}
     >
       {label}
