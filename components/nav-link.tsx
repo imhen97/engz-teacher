@@ -19,7 +19,9 @@ export function NavLink({
       href={href}
       className={cn(
         "rounded-full px-4 py-3 text-sm font-medium transition",
-        active ? "bg-ink text-white" : "text-slate-600 hover:bg-white hover:text-slate-950"
+        active
+          ? "bg-gradient-to-r from-rose-400 to-pink-300 text-white shadow-md"
+          : "text-slate-600 hover:bg-white/80 hover:text-slate-950"
       )}
     >
       {label}
